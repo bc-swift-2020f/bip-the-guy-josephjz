@@ -30,13 +30,33 @@ class ViewController: UIViewController {
             print("👺Error: could not read file")
         }
     }
-
-    @IBAction func photoOrCameraPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Alert Title Goes Here", message: "I think you are awesome!" , preferredStyle: .alert)
-        
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
+    }
+
+    @IBAction func photoOrCameraPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (_) in
+            print("You clikced library!")
+        }
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
+            print("You clikced camera!")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+
     }
     
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
