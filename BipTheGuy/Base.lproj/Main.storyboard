@@ -24,7 +24,7 @@
                                 </constraints>
                                 <state key="normal" image="camera.on.rectangle" catalog="system"/>
                                 <connections>
-                                    <action selector="punchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zww-Ce-lv0"/>
+                                    <action selector="photoOrCameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9tn-Cr-f4Y"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clown" translatesAutoresizingMaskIntoConstraints="NO" id="nRN-9D-KyD">
